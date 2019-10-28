@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Train Scheduler</title>
+    <!-- Link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card m-3">
+            <div class="card-body">
+                <h4 class="card-title">Train Scheduler</h4>
+                <p class="card-text">You'd better keep track of all those trains.</p>
+                <hr>
+                <div class="card text-white bg-dark mb-3" style="max-width: auto">
+                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-body">
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away (*)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="card m-3">
+            <div class="card-header">
+                Add New Trains
+            </div>
+            <div class="card-body">
+
+                <form>
+                    <div class="form-group">
+                        <label for="inputName">Train Name</label>
+                        <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp"
+                            placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDestination">Destination</label>
+                        <select class="form-control" id="inputDestination">
+                            <option>Philadelphia</option>
+                            <option>New York</option>
+                            <option>Boston</option>
+                            <option>Washington DC</option>
+                            <option>Baltimore</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFrequency">Frequency (minutes)</label>
+                        <input type="frequency" class="form-control" id="inputFrequency" placeholder="30">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFirst">First Train Time (HH:MM)</label>
+                        <input type="firstTime" class="form-control" id="inputFirst" placeholder="05:30">
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
