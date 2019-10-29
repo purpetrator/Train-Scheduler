@@ -52,12 +52,6 @@
                             </tbody>
                         </table>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -71,10 +65,10 @@
             </div>
             <div class="card-body">
 
-                <form>
+                <div>
                     <div class="form-group">
                         <label for="inputName">Train Name</label>
-                        <input type="name" class="form-control" id="inputName" aria-describedby="nameHelp"
+                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
                             placeholder="Enter name">
                     </div>
                     <div class="form-group">
@@ -89,23 +83,16 @@
                     </div>
                     <div class="form-group">
                         <label for="inputFrequency">Frequency (minutes)</label>
-                        <input type="frequency" class="form-control" id="inputFrequency" placeholder="30">
+                        <input type="text" class="form-control" id="inputFrequency" placeholder="30">
                     </div>
                     <div class="form-group">
                         <label for="inputFirst">First Train Time (HH:MM)</label>
-                        <input type="firstTime" class="form-control" id="inputFirst" placeholder="05:30">
+                        <input type="text" class="form-control" id="inputFirst" placeholder="05:30">
                     </div>
 
 
-
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-
-
-
-
-
+                    <button class="btn btn-primary" id="submit-btn">Submit</button>
+                </div>
 
 
             </div>
@@ -117,9 +104,16 @@
 
 
 
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Firebase Core JavaScript Link -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <!-- Specific Firebase products we want (Database) -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-
+    <!-- Script -->
+    <script src="logic.js"></script>
 
 
 
