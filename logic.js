@@ -30,6 +30,7 @@ btn.addEventListener("click", function(e) {
   // Get inputs
   e.preventDefault();
 
+  // This is getting the input from the user form
   name = $("#inputName")
     .val()
     .trim();
@@ -43,20 +44,59 @@ btn.addEventListener("click", function(e) {
     .val()
     .trim();
 
+  database.ref().push({
+    name,
+    destination,
+    frequency,
+    firstTime
+  });
+
   // https://firebase.google.com/docs/database/web/read-and-write
 
-  function setTrainRef(name, destination, frequency, firstTime) {
-    firebase
-      .database()
-      .ref("trains/" + name)
-      .set({
-        name,
-        destination,
-        frequency,
-        firstTime
-      });
-  }
+  // function setTrainRef(name, destination, frequency, firstTime) {
+  //   firebase
+  //     .database()
+  //     .ref("trains/" + name)
+  //     .set({
+  //       name,
+  //       destination,
+  //       frequency,
+  //       firstTime
+  //     });
+  // }
 
-  // Change what is saved in firebase
-  setTrainRef(name, destination, frequency, firstTime);
+  // // Change what is saved in firebase
+  // setTrainRef(name, destination, frequency, firstTime);
+});
+
+database.ref().on("child_added", function(snapshot) {
+  var sv = snapshot.val();
+
+  // console.log(snapshot.val());
+  console.log(snapshot.key);
+
+  // // Console.loging the last user's data
+  // console.log(sv.name);
+  // console.log(sv.destination);
+  // console.log(sv.frequency);
+  // console.log(sv.firstTime);
+
+  // var newRow = $("<tr>");
+
+  // var newDelete = $("<button>").text("X").addClass("delete-btn").attr("data-id", snapshot.key);
+  // var newNameCell = $("<td>").text(sv.empName);
+  // var newRoleCell = $("<td>").text(sv.empRole);
+  // var newStartCell = $("<td>").text(sv.empStart);
+  // var newRateCell = $("<td>").text(sv.empRate);
+
+  // btnCounter++;
+
+  // // Change the HTML to reflect
+  // newRow.append(newDelete);
+  // newRow.append(newNameCell);
+  // newRow.append(newRoleCell);
+  // newRow.append(newStartCell);
+  // newRow.append(newRateCell);
+
+  // $("#emp-sched").append(newRow);
 });
