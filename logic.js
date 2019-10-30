@@ -24,6 +24,11 @@ var firstTime = "";
 var nextArrival = "";
 var minAway = "";
 
+// Current time
+var currentTime = moment().format("HH:mm");
+console.log("CURRENT TIME: " + currentTime);
+$("#siteTime").text(currentTime);
+
 var btn = document.querySelector("#submit-btn");
 
 btn.addEventListener("click", function(e) {
@@ -50,6 +55,12 @@ btn.addEventListener("click", function(e) {
     frequency,
     firstTime
   });
+
+  // This clears the input field after the user clicks submit
+  $("#inputName").val("");
+  $("#inputDestination").val("");
+  $("#inputFrequency").val("");
+  $("#inputFirst").val("");
 });
 
 database.ref().on("child_added", function(snapshot) {
@@ -58,10 +69,6 @@ database.ref().on("child_added", function(snapshot) {
   // How often the train comes
   var tFrequency = sv.frequency;
   console.log("freq" + tFrequency);
-
-  // Current time
-  var currentTime = moment().format("HH:mm");
-  console.log("CURRENT TIME: " + currentTime);
 
   // First train time
   var firstTrain = sv.firstTime;
@@ -93,26 +100,23 @@ database.ref().on("child_added", function(snapshot) {
   var newNameCell = $("<td>").text(sv.name);
   var newDestinationCell = $("<td>").text(sv.destination);
   var newFreqCell = $("<td>").text(sv.frequency);
-
-  ////////////// These will be mathy calculations for the last two columns
-  // var newNextArr = $("<td>");
-  // var newMinAway = $("<td>");
+  var newNextArr = $("<td>").text(moment(nextTrain).format("HH:mm"));
+  var newMinAway = $("<td>").text(tMinutesTillTrain);
 
   /////////// Change the HTML to reflect
   // newRow.append(newDelete);
   newRow.append(newNameCell);
   newRow.append(newDestinationCell);
   newRow.append(newFreqCell);
-  // newRow.append(newNextArr);
-  // newRow.append(newMinAway);
+  newRow.append(newNextArr);
+  newRow.append(newMinAway);
 
   $("#train-sched").append(newRow);
 });
 
-// Code this app to calculate when the next train will arrive; this should be relative to the current time
-
 // Input validation - make sure that the user filled in all the fields
 // Make sure the first train time is in military format, don't let the user submit if it isn't
-// Delete function if time
+// Clear after submit
+// Delete function,  if time
 
 // Current Time

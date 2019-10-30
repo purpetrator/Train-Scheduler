@@ -5,6 +5,8 @@
     <title>Train Scheduler</title>
     <!-- Link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Link to external stylesheet-->
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -12,10 +14,13 @@
         <div class="card m-3">
             <div class="card-body">
                 <h4 class="card-title">Train Scheduler</h4>
+
                 <p class="card-text">You'd better keep track of all those trains.</p>
+                <h6 id="curTime">Current Time: <span id="siteTime"></h6>
+
                 <hr>
                 <div class="card text-white bg-dark mb-3" style="max-width: auto">
-                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-header">Current Train Schedule </div>
                     <div class="card-body">
                         <table class="table table-dark">
                             <thead>
