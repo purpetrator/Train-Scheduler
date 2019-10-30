@@ -73,7 +73,7 @@ database.ref().on("child_added", function(snapshot) {
   var sv = snapshot.val();
 
   // console.log(snapshot.val());
-  console.log(snapshot.key);
+  // console.log(snapshot.key);
 
   // // Console.loging the last user's data
   // console.log(sv.name);
@@ -81,22 +81,22 @@ database.ref().on("child_added", function(snapshot) {
   // console.log(sv.frequency);
   // console.log(sv.firstTime);
 
-  // var newRow = $("<tr>");
+  var newRow = $("<tr>");
 
   // var newDelete = $("<button>").text("X").addClass("delete-btn").attr("data-id", snapshot.key);
-  // var newNameCell = $("<td>").text(sv.empName);
-  // var newRoleCell = $("<td>").text(sv.empRole);
-  // var newStartCell = $("<td>").text(sv.empStart);
-  // var newRateCell = $("<td>").text(sv.empRate);
+  var newNameCell = $("<td>").text(sv.name);
+  var newDestinationCell = $("<td>").text(sv.destination);
+  var newFreqCell = $("<td>").text(sv.frequency);
+  var newFirstCell = $("<td>").text(sv.firstTime);
 
   // btnCounter++;
 
   // // Change the HTML to reflect
   // newRow.append(newDelete);
-  // newRow.append(newNameCell);
-  // newRow.append(newRoleCell);
-  // newRow.append(newStartCell);
-  // newRow.append(newRateCell);
+  newRow.append(newNameCell);
+  newRow.append(newDestinationCell);
+  newRow.append(newFreqCell);
+  newRow.append(newFirstCell);
 
-  // $("#emp-sched").append(newRow);
+  $("#train-sched").append(newRow);
 });
