@@ -23,6 +23,8 @@ var firstTime = "";
 var nextArrival = "";
 var minAway = "";
 
+var formats = ["HH:mm", "H:mm"];
+
 // Current time
 var currentTime = moment().format("HH:mm");
 $("#siteTime").text(currentTime);
@@ -58,6 +60,11 @@ btn.addEventListener("click", function(e) {
     return;
   } else if (isNaN(frequency)) {
     alert("Value must be a number!");
+    return;
+  }
+
+  if (moment(firstTime, formats, true).isValid() == false) {
+    alert("Please enter a valid time.");
     return;
   }
 
