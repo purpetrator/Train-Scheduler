@@ -4,7 +4,7 @@ Goal: Make a train schedule application that will provide up-to-date information
 
 This is a project demonstrating my skills with Firebase, Moment.js, and JavaScript.
 
-> Deployed: https://github.com/purpetrator/Train-Scheduler
+> Deployed: https://purpetrator.github.io/Train-Scheduler/
 
 # Parameters of the project:
 
