@@ -49,6 +49,19 @@ btn.addEventListener("click", function(e) {
     .val()
     .trim();
 
+  if (name.length === 0) {
+    alert("Please enter a valid name!");
+    return;
+  }
+
+  if (frequency.length === 0 || firstTime.length === 0) {
+    alert("Please enter a valid number!");
+    return;
+  } else if (isNaN(frequency) || isNaN(firstTime)) {
+    alert("Value must be a number!");
+    return;
+  }
+
   database.ref().push({
     name,
     destination,
@@ -104,7 +117,7 @@ database.ref().on("child_added", function(snapshot) {
   var newMinAway = $("<td>").text(tMinutesTillTrain);
 
   /////////// Change the HTML to reflect
-  // newRow.append(newDelete);
+  newRow.append(newDelete);
   newRow.append(newNameCell);
   newRow.append(newDestinationCell);
   newRow.append(newFreqCell);
@@ -116,7 +129,4 @@ database.ref().on("child_added", function(snapshot) {
 
 // Input validation - make sure that the user filled in all the fields
 // Make sure the first train time is in military format, don't let the user submit if it isn't
-// Clear after submit
 // Delete function,  if time
-
-// Current Time

@@ -1,3 +1,35 @@
-#curTime {
-  text-align: center;
+body {
+  background-color: #779fa1;
 }
+
+#curTime {
+  text-align: left;
+}
+
+.card {
+background-color: #EEF0F2;
+}
+
+.table {
+background-color:;
+}
+
+#current-card {
+    background-color: ;
+}
+
+.card-header {
+    background-color: ;
+}
+
+.card-title {
+    font-family: 'Staatliches', cursive;
+    font-size: 44px;
+}
+
+.train {
+    width: 100%;
+    margin: 0 auto;
+}
+
+7D8491
