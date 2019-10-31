@@ -7,29 +7,27 @@ body {
 }
 
 .card {
-background-color: #EEF0F2;
+  background-color: #eef0f2;
 }
 
 .table {
-background-color:;
+  background-color: ;
 }
 
 #current-card {
-    background-color: ;
+  background-color: ;
 }
 
 .card-header {
-    background-color: ;
+  background-color: ;
 }
 
 .card-title {
-    font-family: 'Staatliches', cursive;
-    font-size: 44px;
+  font-family: "Staatliches", cursive;
+  font-size: 44px;
 }
 
 .train {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
-
-7D8491

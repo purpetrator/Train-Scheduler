@@ -49,6 +49,7 @@ btn.addEventListener("click", function(e) {
     .val()
     .trim();
 
+  // Input Validations
   if (name.length === 0) {
     alert("Please enter a valid name!");
     return;
@@ -117,7 +118,7 @@ database.ref().on("child_added", function(snapshot) {
   var newMinAway = $("<td>").text(tMinutesTillTrain);
 
   /////////// Change the HTML to reflect
-  newRow.append(newDelete);
+  // newRow.append(newDelete);
   newRow.append(newNameCell);
   newRow.append(newDestinationCell);
   newRow.append(newFreqCell);
