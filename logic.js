@@ -14,8 +14,7 @@ firebase.initializeApp(firebaseConfig);
 // Creating a variable to reference the database
 var database = firebase.database();
 
-// Initial Variables (SET the first set IN FIREBASE FIRST)
-// Note remember to create these same variables in Firebase!
+// Initial Variables
 var name = "";
 var destination = "";
 var frequency = "";
@@ -26,7 +25,6 @@ var minAway = "";
 
 // Current time
 var currentTime = moment().format("HH:mm");
-console.log("CURRENT TIME: " + currentTime);
 $("#siteTime").text(currentTime);
 
 var btn = document.querySelector("#submit-btn");
@@ -55,10 +53,10 @@ btn.addEventListener("click", function(e) {
     return;
   }
 
-  if (frequency.length === 0 || firstTime.length === 0) {
+  if (frequency.length === 0) {
     alert("Please enter a valid number!");
     return;
-  } else if (isNaN(frequency) || isNaN(firstTime)) {
+  } else if (isNaN(frequency)) {
     alert("Value must be a number!");
     return;
   }
@@ -127,7 +125,3 @@ database.ref().on("child_added", function(snapshot) {
 
   $("#train-sched").append(newRow);
 });
-
-// Input validation - make sure that the user filled in all the fields
-// Make sure the first train time is in military format, don't let the user submit if it isn't
-// Delete function,  if time
